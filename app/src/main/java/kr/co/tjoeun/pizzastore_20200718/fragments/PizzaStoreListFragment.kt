@@ -34,6 +34,17 @@ class PizzaStoreListFragment:Fragment() {
         mAdapter = PizzaStoreAdapter(context!!, R.layout.pizza_store_list_item, mPizzaStoreList)
         pizzaStoreListView.adapter = mAdapter
 
+        pizzaStoreListView.setOnItemClickListener { parent, view, position, id ->
+
+            val clickedPizzaStore = mPizzaStoreList[position]
+
+        }
+
+
+
+
     }
+
+
 
 }
