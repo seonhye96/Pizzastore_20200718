@@ -20,23 +20,28 @@ class EditNickNameActivity : BaseActivity() {
 
     override fun setupValues() {
 
+        newNickNameEdt.setOnClickListener {
+
 //        입력한 닉네임 저장
-        val inputNickName = newNickNameEdt.text.toString()
+            val inputNickName = newNickNameEdt.text.toString()
 
 //        닉네임이 5글자가 안되면 거부.
-        if(inputNickName.length < 5){
+            if(inputNickName.length < 5){
 //            5글자 이상이어야한다고 안내
-            Toast.makeText(mContext, "닉네임은 최소 5글자 이상이어야합니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(mContext, "닉네임은 최소 5글자 이상이어야합니다.", Toast.LENGTH_SHORT).show()
 
 //            복귀코드 실행을 막자 => 이 함수를 강제 종료
-            return@setOnClickListener
-        }
+                return@setOnClickListener
+            }
 
 //        intent에 담아서 복귀
-        val resultIntent = Intent()
-        resultIntent.putExtra("nickName", inputNickName)
-        setResult(Activity.RESULT_OK, resultIntent)
-        finish()
+            val resultIntent = Intent()
+            resultIntent.putExtra("nickName", inputNickName)
+            setResult(Activity.RESULT_OK, resultIntent)
+            finish()
+
+        }
+
 
     }
 
